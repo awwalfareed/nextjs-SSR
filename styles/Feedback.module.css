@@ -1,0 +1,108 @@
+.container{
+    /* background-color: lightgray; */
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30%;
+    /* margin-bottom: 20%; */
+}
+
+.text{
+    width: 30%;
+    /* margin-top: -200px; */
+    background-color: skyblue;
+}
+
+.send{
+    margin-left: 4px;
+    font-size: 14px;
+    text-align: left;
+    color: white;
+    margin-top: 25px;
+}
+
+.txtfield{
+    width: 30%;
+    padding: 5px;
+
+    /* background-color: yellow; */
+     /* box-shadow: -1px 3px 8px 5px rgba(0,0,0,0.75); 
+    -webkit-box-shadow: -1px 3px 8px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 3px 8px 5px rgba(0,0,0,0.75);  */
+}
+
+.add{
+    margin-left: 10px;
+    padding: 5px;
+    color: black;
+    font-size: 15px;
+}
+
+.name{
+    width: 100%;
+    /* background-color: blue; */
+}
+
+.poor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: teal; */
+}
+
+.exc{
+    margin-left: 10px;
+    padding: 5px;
+    color: black;
+    font-size: 15px;
+}
+
+.easy{
+    margin-left: 10px;
+    color: black;
+    font-size: 15px;
+}
+
+/* .like{
+    width: 20%;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+} */
+
+.nope{
+    background-color: violet;
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+.check{
+    display: flex;
+    flex-direction: column;
+}
+.checkk{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.buf{
+    /* width: 50%; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* background-color: violet; */
+}
+
+.ugy{
+    width: 5px;
+}
+
+/* .sub{
+    background-color: lightblue;
+    width: 50%;
+} */
