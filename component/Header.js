@@ -50,7 +50,7 @@ const Header = () => {
   ]
 
   const HideNav = () => {
-    console.log(window.scrollY + 'recieved')
+    // console.log(window.scrollY + 'recieved')
     if (window.scrollY >= 90) {
       setShow(true)
     } else {
