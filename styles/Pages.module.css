@@ -1,0 +1,32 @@
+.container{
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.main{
+    /* background-color: blue; */
+    height: 100vh;
+    width: 75%;
+}
+
+.exp{
+    font-size: 20px;
+    color: gray;
+    
+}
+
+.mor{
+    font-size: 18px;
+    color: blue;
+}
+
+.label{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

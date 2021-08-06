@@ -74,11 +74,7 @@ const Feedback = () => {
         console.log(clicked)
     }
 
-    // const [rating, setRating] = useState();
-    // const handleRating = id => {
-    //     setRating({ [id]: true })
-    //     console.log(rating)
-    // }
+
     return (
         <form method="POST" onSubmit={handleSubmit(onSubmit)}>
             <div className={styles.main}>
@@ -111,21 +107,21 @@ const Feedback = () => {
                             <h2 className={styles.text}>Poor</h2>
                             <h2 className={styles.text}>Excellent</h2>
                         </div>
-                        <Button className={classes.like} onClick={() => handleClick("1")} >1</Button>
-                        <Button className={classes.like} onClick={() => handleClick("2")}>2</Button>
-                        <Button className={classes.like} onClick={() => handleClick("3")}>3</Button>
-                        <Button className={classes.like} onClick={() => handleClick("4")}>4</Button>
-                        <Button className={classes.like} onClick={() => handleClick("5")}>5</Button>
+                        <Button className={classes.like} id="button1" onClick={() => handleClick("1")} >1</Button>
+                        <Button className={classes.like} id="button2" onClick={() => handleClick("2")}>2</Button>
+                        <Button className={classes.like} id="button3" onClick={() => handleClick("3")}>3</Button>
+                        <Button className={classes.like} id="button4" onClick={() => handleClick("4")}>4</Button>
+                        <Button className={classes.like} id="button5" onClick={() => handleClick("5")}>5</Button>
                     </div>
                     <div className={styles.feed}>
                         <h3 className={styles.text}>Are you having any trouble finding anything?</h3>
-                        <RadioGroup coloum="true">
+                        <RadioGroup name="anything" >
                             <FormControlLabel
                                 value="Yes"
-                                control={<Radio inputRef={{ ...register("yes") }} />}
+                                control={<Radio { ...register("true") } />}
                                 label="yes"
                             />
-                            <FormControlLabel value="No" control={<Radio inputRef={{ ...register("no") }} />} label="No" />
+                            <FormControlLabel value="No" control={<Radio { ...register("false") } />} label="No" />
                         </RadioGroup>
                         <TextareaAutosize aria-label="empty textarea" minRows={3} placeholder="Tell Us.." {...register("trouble")} />
                     </div>
