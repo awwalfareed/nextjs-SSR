@@ -1,27 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Raleway&display=swap');
+
 .container{
-    background-color: lightgray;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif; */
+    background-color: lightgray;
+    height: auto;
     
 }
 
 .main{
-    /* background-color: blue; */
-    height: 100vh;
+    height: auto;
     width: 75%;
 }
 
 .exp{
+    font-family: 'Raleway', sans-serif; 
     font-size: 20px;
     color: gray;
+    cursor: pointer;
     
 }
 
 .mor{
-    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
     color: blue;
+    cursor: pointer;
 }
 
 .label{
@@ -29,4 +38,179 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.celeb{
+    width: 100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center
+
+}
+
+.divde{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.cel{
+    border-radius: 50%;
+}
+
+.bg{
+    background: linear-gradient(to right, red, purple);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 5px;
+
+}
+
+.title{
+    font-size: 15px;
+    color: blue;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+
+}
+
+.tab{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.tab1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 45%;
+    height: 50px;
+    background-color: darkgray;
+    border-radius: 7px;
+    
+}
+
+.story{
+    font-family: 'Open Sans', sans-serif;   
+    cursor: pointer;
+
+}
+
+.post{
+    font-family: 'Open Sans', sans-serif;   
+    background: linear-gradient(to top right, red, purple);
+    width: 50px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.ntg{
+    margin-top: 10px;
+}
+
+.popular{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif; 
+    color: darkgray;
+
+}
+
+.cardImg{
+    border-radius: 50%;
+    object-fit: contain;
+    padding: 5px;
+    /* margin-riht: 20px; */
+}
+
+.card{
+    background-color: white;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 5px;
+    /* justify-content: center; */
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 17px;
+
+}
+.popu{
+    margin-left: 18px;
+}
+
+.mov{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Ab{
+    font-family: 'Open Sans', sans-serif;   
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.sec{
+    font-family: 'Open Sans', sans-serif;   
+    margin-top: 0px;
+}
+
+.celebImg{
+    width: 100%;    
+}
+
+.Abc{
+    width: 100%;
+}
+
+.comm{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.like{
+    color: gray;
+    padding: 2px;
+    
+}
+.num{
+    margin: 5px;
+}
+
+.info{
+    margin-left: 10px;
+}
+
+.info1{
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 0px;
+}
+
+.spn{
+    color: lightblue;
 }
