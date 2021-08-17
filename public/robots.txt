@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://trueTn.com/sitemap.xml

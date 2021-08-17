@@ -1,19 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
 import Post from '../component/Post'
-// import { CardMedia } from '@material-ui/core';
-import Image from 'next/image'
+// import Image from 'next/image'
 import styles from '../styles/Pages.module.css'
-// import Abs from '../public/images/Ab.jpg'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ModeCommentOutlinedIcon from '@material-ui/icons/ModeCommentOutlined';
 import Link from 'next/link'
-import Data from './api/Data.json'
+// import Data from './api/Data.json'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
+// import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import Avatar from '@material-ui/core/Avatar';
+// import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 
@@ -45,11 +44,19 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Index() {
     const classes = useStyles();
-    const [expanded, setExpanded] = React.useState(false);
+    const [list, setList] = useState([]);
+    useEffect(() => {
+        Axios({
+            url: "https://jsonplaceholder.typicode.com/photos"
+        })
+            .then(response => {
+                setList(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }, [setList]);
 
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
     return (
         <div className={styles.container}>
             <div className={styles.main}>
@@ -75,10 +82,10 @@ export default function Index() {
                     <h2 className={styles.popular}>Popular Celebrity Posts</h2>
                 </div>
                 <div className={styles.mov}>
-                    {Data.map((item) => (
+                    {list.map((item) => (
                         <div key={item.id} className={styles.card}>
                             <Card className={classes.root}>
-                                <CardHeader
+                                {/* <CardHeader
                                     avatar={
                                         <Avatar aria-label="recipe" className={classes.avatar} src={item.image} />
 
@@ -86,18 +93,18 @@ export default function Index() {
                                     }
                                     title={item.name}
                                     subheader={item.time}
-                                />
+                                />*/}
                                 <CardMedia
                                     className={classes.media}
                                     component="img"
-                                    image={item.image}
+                                    image={item.thumbnailUrl}
                                 />
-                                <div className={styles.comm}>
+                                {/* <div className={styles.comm}>
                                     <FavoriteBorderIcon className={styles.like} />
                                     <span className={styles.num}>4566</span>
                                     <ModeCommentOutlinedIcon className={styles.like} />
                                     <span className={styles.num}>566</span>
-                                </div>
+                                </div> */}
                                 <CardContent>
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         {item.title}
