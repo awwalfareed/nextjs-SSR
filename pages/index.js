@@ -47,7 +47,7 @@ export default function Index() {
     const [list, setList] = useState([]);
     useEffect(() => {
         Axios({
-            url: "https://jsonplaceholder.typicode.com/photos"
+            url: "https://jsonplaceholder.typicode.com/posts"
         })
             .then(response => {
                 setList(response.data);
@@ -94,11 +94,11 @@ export default function Index() {
                                     title={item.name}
                                     subheader={item.time}
                                 />*/}
-                                <CardMedia
+                                {/* <CardMedia
                                     className={classes.media}
                                     component="img"
                                     image={item.thumbnailUrl}
-                                />
+                                /> */}
                                 {/* <div className={styles.comm}>
                                     <FavoriteBorderIcon className={styles.like} />
                                     <span className={styles.num}>4566</span>
@@ -107,7 +107,11 @@ export default function Index() {
                                 </div> */}
                                 <CardContent>
                                     <Typography variant="body2" color="textSecondary" component="p">
-                                        {item.title}
+                                        <Link as={`/${item.id}`} href="/[id]" >
+                                            <a>
+                                                {item.title}
+                                            </a>
+                                        </Link>
                                     </Typography>
                                 </CardContent>
                             </Card>

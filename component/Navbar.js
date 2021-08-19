@@ -12,7 +12,8 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import { useTheme } from '@material-ui/core/styles';
+// import { useTheme } from '@material-ui/core/styles';
+import { Link } from '@material-ui/core';
 
 export default function Navbar() {
     const [Shrink, setShrink] = useState(true)
@@ -141,7 +142,9 @@ export default function Navbar() {
                 ))}
 
                 <div className={styles.main}>
-                    <h2 className={styles.logo} >Fiverr.</h2>
+                    <Link href="/">
+                        <h2 className={styles.logo} >Fiverr.</h2>
+                    </Link>
                 </div>
                 <div className={styles.left}>
                     {data.map((item, i) => (

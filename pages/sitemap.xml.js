@@ -1,13 +1,32 @@
-import React from "react";
+// import React from "react";
 import fs from "fs";
 
 const Sitemap = () => { };
 
-export const getServerSideProps = ({ res }) => {
-    const baseUrl = {
-        development: "http://localhost:3000",
-        production: "https://mydomain.com",
-    }[process.env.NODE_ENV];
+const baseUrl = {
+    development: "http://localhost:3000",
+    production: "https://mydomain.com",
+}[process.env.NODE_ENV];
+
+
+const createSitemap = (urlList) =>
+    `<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+    ${urlList.map((url) => toUrl(url)).join("")}
+    </urlset>`;
+
+const toUrl = (route) =>
+    `<url><loc>${route.url}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    </url>`;
+
+
+export async function getServerSideProps({ res, req }) {
+    const siteMapJson = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+    const urlList = await siteMapJson.json();
+    const sitemap = createSitemap(urlList);
 
     const staticPages = fs
         .readdirSync({
@@ -26,31 +45,11 @@ export const getServerSideProps = ({ res }) => {
             return `${baseUrl}/${staticPagePath}`;
         });
     console.log(staticPages)
-
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-          ${staticPages
-            .map((url) => {
-                return `
-                <url>
-                  <loc>${url}</loc>
-                  <lastmod>${new Date().toISOString()}</lastmod>
-                  <changefreq>weekly</changefreq>
-                  <priority>1.0</priority>
-                </url>
-              `;
-            })
-            .join("")}
-        </urlset>
-      `;
-
+    
     res.setHeader("Content-Type", "text/xml");
     res.write(sitemap);
     res.end();
-
-    return {
-        props: {},
-    };
+    return { props: { results: { urlList } } }
 };
 
 export default Sitemap;

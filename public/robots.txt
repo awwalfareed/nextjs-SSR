@@ -1,2 +1,4 @@
 User-agent: *
-Sitemap: https://trueTn.com/sitemap.xml
+Allow: /
+
+Sitemap: https://localhost:3000/sitemap.xml
