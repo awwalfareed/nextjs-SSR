@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Post from '../component/Post'
-// import Image from 'next/image'
 import styles from '../styles/Pages.module.css'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ModeCommentOutlinedIcon from '@material-ui/icons/ModeCommentOutlined';
 import Link from 'next/link'
-// import Data from './api/Data.json'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-// import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-// import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 
@@ -51,6 +47,7 @@ export default function Index() {
         })
             .then(response => {
                 setList(response.data);
+                console.log(response.data)
             })
             .catch(error => {
                 console.log(error);
@@ -85,26 +82,6 @@ export default function Index() {
                     {list.map((item) => (
                         <div key={item.id} className={styles.card}>
                             <Card className={classes.root}>
-                                {/* <CardHeader
-                                    avatar={
-                                        <Avatar aria-label="recipe" className={classes.avatar} src={item.image} />
-
-
-                                    }
-                                    title={item.name}
-                                    subheader={item.time}
-                                />*/}
-                                {/* <CardMedia
-                                    className={classes.media}
-                                    component="img"
-                                    image={item.thumbnailUrl}
-                                /> */}
-                                {/* <div className={styles.comm}>
-                                    <FavoriteBorderIcon className={styles.like} />
-                                    <span className={styles.num}>4566</span>
-                                    <ModeCommentOutlinedIcon className={styles.like} />
-                                    <span className={styles.num}>566</span>
-                                </div> */}
                                 <CardContent>
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         <Link as={`/${item.id}`} href="/[id]" >

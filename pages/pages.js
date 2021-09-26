@@ -21,6 +21,7 @@ function Pages({ data }) {
 export async function getStaticProps() {
     const res = await fetch(`http://localhost:3000/api/citynames`);
     const data = await res.json();
+    // console.log(data)
     return {
         props: { data }
     }
