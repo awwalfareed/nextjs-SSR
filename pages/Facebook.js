@@ -19,7 +19,7 @@ import axios from "axios";
 
         const options = {
             method: 'GET',
-            url: `https://graph.facebook.com/v11.0/17841406993638186?fields=followers_count,follows_count,id,ig_id,media_count,name,profile_picture_url,username,biography&access_token=${props.accesstoken}`,
+            url: `https://graph.facebook.com/v11.0/${props.userId}?fields=followers_count,follows_count,id,ig_id,media_count,name,profile_picture_url,username,biography&access_token=${props.accesstoken}`,
         };
 
         axios.request(options).then(function (response) {
@@ -37,8 +37,8 @@ import axios from "axios";
         return (
             <div>
                 <img src={profile} alt="picture" style={{
-                    width: "50px",
-                    height: "50px",
+                    width: "100px",
+                    height: "100px",
                 }} />
                 <h2>Username:{username}</h2>
                 <h2>Name:{Name}</h2>

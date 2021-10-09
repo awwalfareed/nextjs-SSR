@@ -8,11 +8,13 @@ export default function Inslight(props) {
     const [list, setList] = useState([]);
     useEffect(() => {
         Axios({
-            url: `https://graph.facebook.com/17841406993638186/insights?metric=impressions,reach,profile_views&period=day&access_token=${props.accesstoken}`
+            url: `https://graph.facebook.com/${props.userId}/insights?metric=impressions,reach,profile_views&period=day&access_token=${props.accesstoken}`
         })
             .then(response => {
                 const data = response.data
-                // console.log(data.data)
+                console.log(response.data)
+                console.log(list.length)
+                console.log(data.data.length)
                 setList(data.data)
             })
             .catch(error => {

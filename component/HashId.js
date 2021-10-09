@@ -11,7 +11,7 @@ export default function Hashid(props) {
 
     const Getid = {
         method: 'GET',
-        url: `https://graph.facebook.com/ig_hashtag_search?user_id=17841406993638186&q=${query}&access_token=${props.accesstoken}`,
+        url: `https://graph.facebook.com/ig_hashtag_search?user_id=${props.userId}&q=${query}&access_token=${props.accesstoken}`,
     };
 
     Axios.request(Getid).then(function (response) {
@@ -23,7 +23,7 @@ export default function Hashid(props) {
     });
     useEffect(() => {
         Axios({
-            url: `https://graph.facebook.com/17841562924092473/top_media?user_id=17841406993638186&fields=id,media_type,comments_count,like_count,media_url,permalink,timestamp,caption,children&access_token=${props.accesstoken}`
+            url: `https://graph.facebook.com/17841562924092473/top_media?user_id=${props.userId}&fields=id,media_type,comments_count,like_count,media_url,permalink,timestamp,caption,children&access_token=${props.accesstoken}`
         })
             .then(response => {
                 const data = response.data
